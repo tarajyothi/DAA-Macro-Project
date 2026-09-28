@@ -1,0 +1,23 @@
+PROMPT USED FOR VISUALIZATION - UNIT IV (Project 10: N-Queens State Space Tree)
+===============================================================================
+
+Create a large, readable STATE SPACE TREE (Python + matplotlib, PNG) for the 4-Queens problem solved
+by backtracking. It must be a tree, not just a chessboard.
+
+Structure:
+  - Root node (empty board) at the top, then one level per row: Level 1 = queen in Row 1, ...,
+    Level 4 = queen in Row 4. Every node is a circle containing the COLUMN number (1-4) tried in that row.
+  - From each valid node, draw all four children (columns 1..4 in order) exactly as the algorithm
+    tests them; children of invalid nodes are never expanded (pruned).
+  - The tree must contain exactly the nodes the Java program tests: 60 placements + the root = 61 nodes.
+
+Colour code (required by the faculty: invalid branches in RED):
+  - RED circle with a cross and dashed red edge : invalid placement (column or diagonal conflict) -> pruned
+  - GREEN circle and solid green edge           : valid partial placement -> go deeper
+  - ORANGE circle with a return arrow           : valid placement whose four children are all invalid -> BACKTRACK
+  - GOLD circle labelled SOL 1 / SOL 2          : complete valid solution; thicker green path from the root
+
+Extras:
+  - Level labels on the left, a legend at the bottom, and a footer stating
+    "Placements tested = 60 | 2 solutions | full search space without pruning = 4^4 = 256".
+  - Two small chessboard thumbnails (Solution 1: columns 2,4,1,3; Solution 2: columns 3,1,4,2) in the top corners.

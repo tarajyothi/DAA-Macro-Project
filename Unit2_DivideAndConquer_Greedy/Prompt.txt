@@ -1,0 +1,29 @@
+PROMPT USED FOR VISUALIZATION - UNIT II (Project 4: Greedy Job Sequencing)
+==========================================================================
+
+Create a professional, readable FLOWCHART (Python + matplotlib, PNG) for Job Sequencing with Deadlines
+solved by the Greedy method. Use standard flowchart shapes: ovals for Start/End, rounded rectangles
+for processes, diamonds for decisions, arrows for flow.
+
+Flow (top to bottom):
+  START
+  -> Sort jobs by decreasing profit   [J1(100) J3(27) J4(25) J2(19) J5(15)]
+  -> Select next highest-profit job
+  -> Decision diamond: "Is a slot free at or before the job's deadline?"
+        YES -> SCHEDULE job in the latest free slot, profit += p   (green box)
+        NO  -> SKIP job (red box)
+  -> both branches merge into a second decision: "More jobs left?"
+        YES -> arrow loops back to "Select next highest-profit job"
+        NO  -> Output final schedule (Slot 1: J3, Slot 2: J1, Slot 3: J5)
+  -> Total profit = 100 + 27 + 15 = 142
+  -> END
+
+Also add a right-hand panel titled "Worked Example" containing:
+  - the input jobs: J1(d=2,p=100) J2(d=1,p=19) J3(d=2,p=27) J4(d=1,p=25) J5(d=3,p=15)
+  - a table with columns Job, d, p, Free slot?, Decision:
+        J1 2 100 slot 2 SCHEDULE | J3 2 27 slot 1 SCHEDULE | J4 1 25 none SKIP |
+        J2 1 19 none SKIP | J5 3 15 slot 3 SCHEDULE   (green rows = schedule, red rows = skip)
+  - three green boxes for the final time-slot schedule and the line "Total profit = 142 | 3 of 5 jobs scheduled".
+
+Style: dark-blue process boxes, yellow decision diamonds, green/red YES-NO arrows and labels,
+large readable fonts, title "Greedy Job Sequencing with Deadlines - Flow Diagram".

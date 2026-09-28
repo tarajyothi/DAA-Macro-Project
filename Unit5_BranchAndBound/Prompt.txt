@@ -1,0 +1,23 @@
+PROMPT USED FOR VISUALIZATION - UNIT V (Project 13: Knapsack Branch and Bound Tree)
+===================================================================================
+
+Create a large, clear state-space TREE (Python + matplotlib, PNG) that illustrates BOUNDING and PRUNING
+in 0/1 Knapsack solved by best-first Branch and Bound.
+
+Problem: weights = [2, 3, 4, 5], values = [40, 50, 65, 70], capacity = 8 (items already sorted by value/weight).
+Upper bound of a node = current value + greedy fill of the remaining capacity, taking a fraction of the
+first item that does not fit.
+
+Tree requirements (25 nodes, produced by the actual Python program):
+  - Root node at the top; every node has two children: solid edge "+ item k" (INCLUDE) and dashed edge
+    "skip item k" (EXCLUDE).
+  - Each node box shows: current value v, current weight w, upper bound ub, and either
+    "expanded #k" (order of expansion), "leaf (complete)", or its pruning reason.
+  - PRUNED nodes are red with red edges and are clearly marked:
+        "w = 9 > 8, INFEASIBLE"  (weight exceeds capacity)   or   "ub = 110, PRUNED: ub <= best 120".
+  - The optimal leaf (v = 120, w = 8, items 2 and 4) is highlighted in gold with "BEST SOLUTION".
+  - Legend for expanded / pruned / leaf / optimal nodes, and a note for solid = include, dashed = exclude.
+  - Bottom banner: "BEST = 120 (items 2, 4; weight 8/8) | 25 nodes generated of 31 | 7 pruned |
+    best-value updates: 40 -> 90 -> 105 -> 115 -> 120".
+
+Make the pruning logic visually obvious: red boxes must stand out against blue expanded nodes.

@@ -1,0 +1,21 @@
+PROMPT USED FOR VISUALIZATION - UNIT I (Project 1: Sorting Complexity Visualizer)
+==============================================================================
+
+Create a clean, professional line chart (Python + matplotlib, 150 dpi PNG) that compares the
+THEORETICAL time complexity of Merge Sort and Quick Sort for input sizes n = 10, n = 100 and n = 1000.
+
+Data to plot (asymptotic growth functions with all constant factors = 1):
+  - Merge Sort, O(n log n)             : n * log2(n)   -> 33.22, 664.39, 9965.78
+  - Quick Sort, average case O(n log n): n * log2(n)   -> 33.22, 664.39, 9965.78
+  - Quick Sort, worst case  O(n^2)     : n^2           -> 100, 10000, 1000000
+
+Design requirements:
+  1. One line per case with distinct colours and markers: Merge Sort = blue circles (solid),
+     Quick Sort average = green triangles (dashed, so it stays visible where it overlaps Merge Sort),
+     Quick Sort worst = red squares (solid).
+  2. X-axis: n = 10, n = 100, n = 1000 (log scale). Y-axis: log scale, because n^2 grows much faster.
+  3. Annotate each data point with its numeric value.
+  4. Title must state that the chart shows theoretical / asymptotic growth and NOT measured execution times.
+  5. Axis labels: "Input size n" and "Growth function value (log scale, constants = 1)".
+  6. Legend in the upper-left, light grid, small italic note that Merge Sort and Quick Sort (average) coincide.
+  7. Do NOT present benchmark timings or claim that the numbers are real runtimes.

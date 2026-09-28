@@ -1,0 +1,29 @@
+PROMPT USED FOR VISUALIZATION - UNIT III (Project 7: Traveling Salesperson - DP Table)
+======================================================================================
+
+Create a detailed figure (Python + matplotlib, PNG) that visualizes the DYNAMIC PROGRAMMING STATE
+TRANSITIONS of the Held-Karp algorithm for TSP with 4 cities A, B, C, D and this distance matrix:
+      A   B   C   D
+  A   0  10  15  20
+  B  10   0  35  25
+  C  15  35   0  30
+  D  20  25  30   0
+
+State definition: dp[S][j] = cheapest path that starts at A, visits exactly the cities in subset S
+of {B, C, D}, and ends at j (j in S).  Recurrence: dp[S][j] = min over k in S-{j} of dp[S-{j}][k] + d(k,j).
+
+The figure must contain four panels:
+  1. STATE-TRANSITION GRAPH (largest, top-left): a start node A, then three columns of state boxes
+     grouped by subset size |S| = 1, 2, 3 (each box shows "{subset}, end X" and its dp cost), then a
+     return node A. Draw an arrow for every DP transition labelled with the edge cost d(k,j).
+     Transitions that produced the stored minimum are solid blue; rejected transitions are grey dashed;
+     the states and edges on the optimal route are thick green.
+  2. CITY MAP (top-right): the 4 cities with all pairwise distances (not to scale) and the optimal tour
+     highlighted with green directional arrows: A -> B -> D -> C -> A.
+  3. DP TABLE (bottom-left): rows = subsets {B},{C},{D},{B,C},{B,D},{C,D},{B,C,D}; columns = end at B/C/D;
+     each cell shows "cost (<- previous city)"; cells on the optimal path highlighted in green.
+  4. RESULT PANEL (bottom-right): closing-the-tour computations dp[{B,C,D},j] + d(j,A) for j = B, C, D
+     (80, 80, 95), the backtracking chain {B,C,D},C <- {B,D},D <- {B},B <- A, and a green banner
+     "MINIMUM COST = 80   Tour: A -> B -> D -> C -> A".
+
+Do not draw a generic TSP picture: the DP states, transitions and table are the point of the figure.

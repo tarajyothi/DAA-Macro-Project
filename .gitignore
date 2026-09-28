@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+# Java / C++ build output
+*.class
+*.o
+*.exe
+a.out
+Project4_JobSequencing
+# IDE / editor temporary files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+# OS temporary files
+.DS_Store
+Thumbs.db
+desktop.ini
